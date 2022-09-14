@@ -32,6 +32,7 @@ public class TimeAList {
                 base *= 2;
             }
             AList<Integer> test = new AList<>();
+
             Stopwatch sw = new Stopwatch();
             for(int j = 0; j < base; j++){
                 test.addLast(1);
@@ -44,7 +45,6 @@ public class TimeAList {
 
         }
         printTimingTable(Ns, times, opCounts);
-
 
     }
 }

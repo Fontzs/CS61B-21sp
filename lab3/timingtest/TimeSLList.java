@@ -1,6 +1,4 @@
 package timingtest;
-import afu.org.checkerframework.checker.igj.qual.I;
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
@@ -39,7 +37,7 @@ public class TimeSLList {
                 test.addLast(1);
             }
             int M = 10000;
-            
+
             Stopwatch sw = new Stopwatch();
             for (int j = 0; j < M; j++) {
                 test.getLast();
@@ -51,8 +49,6 @@ public class TimeSLList {
             opCounts.addLast(M);
         }
         printTimingTable(Ns, times, opCounts);
-
-
     }
 
 }
