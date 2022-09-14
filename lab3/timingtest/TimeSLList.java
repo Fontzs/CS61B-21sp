@@ -39,11 +39,13 @@ public class TimeSLList {
                 test.addLast(1);
             }
             int M = 10000;
+            
             Stopwatch sw = new Stopwatch();
             for (int j = 0; j < M; j++) {
                 test.getLast();
             }
             double timeInSeconds = sw.elapsedTime();
+
             Ns.addLast(base);
             times.addLast(timeInSeconds);
             opCounts.addLast(M);
