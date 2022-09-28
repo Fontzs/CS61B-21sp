@@ -43,6 +43,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         return getRecursiveHelper(sentinel, index);
     }
 
+    @Override
     public void addFirst(T item){
         Node newNode = new Node(sentinel, item, sentinel.next);
         sentinel.next.prev = newNode;
@@ -51,6 +52,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
 
     }
 
+    @Override
     public void addLast(T item){
         Node newNode = new Node(sentinel.prev, item, sentinel);
         sentinel.prev.next = newNode;
@@ -58,14 +60,17 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         size++;
     }
 
+    @Override
     public boolean isEmpty(){
         return size == 0;
     }
 
+    @Override
     public int size(){
         return size;
     }
 
+    @Override
     public void printDeque(){
         StringBuffer str = new StringBuffer();
 
@@ -77,6 +82,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         System.out.println(str.toString());
     }
 
+    @Override
     public T removeFirst(){
         if(size == 0){
             return null;
@@ -88,6 +94,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         return ans;
     }
 
+    @Override
     public T removeLast(){
         if(size == 0){
             return null;
@@ -99,8 +106,9 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         return ans;
     }
 
+    @Override
     public T get(int index){
-        if (index >= size){
+        if (index >= size || index < 0){
             return null;
         }
         Node temp = sentinel;
@@ -111,6 +119,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         return temp.item;
     }
 
+
     private class LLDIterator implements Iterator<T>{
         private int pos;
 
@@ -118,9 +127,11 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
             pos = 0;
         }
 
+        @Override
         public boolean hasNext(){
             return pos < size;
         }
+        @Override
         public T next(){
             T item = get(pos);
             pos++;
@@ -128,10 +139,12 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
         }
     }
 
+    @Override
     public Iterator<T> iterator(){
         return new LLDIterator();
     }
 
+    @Override
     public boolean equals(Object o){
         if(o == null){
             return false;
@@ -145,7 +158,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T>{
             if(dick.size() != this.size){
                 return false;
             }
-            for (int i = 0; i < this.size - 1; i++) {
+            for (int i = 0; i < this.size ; i++) {
                 if(!get(i).equals(dick.get(i))){
                     return false;
                 }
