@@ -8,7 +8,10 @@ public interface Deque<T> {
 
     public void addLast(T item);
 
-    public boolean isEmpty();
+    public default boolean isEmpty() {
+
+        return size() == 0;
+    }
 
     public int size();
 
