@@ -1,9 +1,5 @@
 package deque;
 
-import net.sf.saxon.expr.Component;
-import net.sf.saxon.functions.PositionAndLast;
-import net.sf.saxon.trans.SymbolicName;
-
 import java.util.Iterator;
 
 public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
