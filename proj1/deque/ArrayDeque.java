@@ -8,6 +8,8 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
     private int FirstPoint;
     private int LastPoint;
     
+    
+
     private void resize(int capacity){
         T[] temp = (T[]) new Object[capacity];
         int a = (capacity - size)/ 2;
@@ -72,14 +74,14 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
 
     @Override
     public T removeFirst() {
-        if (size == 0){
+        if (isEmpty()){
             return null;
         }
         FirstPoint++;
         size--;
         T ans = arr[FirstPoint];
         arr[FirstPoint] = null;
-        if (size <= arr.length/4){
+        if (size > 16 || size <= arr.length/4){
             resize(arr.length/2);
         }
         return ans;
@@ -95,7 +97,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
         size--;
         T ans = arr[LastPoint];
         arr[LastPoint] = null;
-        if (size <= arr.length/4){
+        if (size > 16 || size <= arr.length/4){
             resize(arr.length/2);
         }
 
