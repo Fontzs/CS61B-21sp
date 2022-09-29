@@ -4,6 +4,7 @@ import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class SpecialArrayDequeTest {
     @Test
@@ -75,9 +76,10 @@ public class SpecialArrayDequeTest {
     }
 
     @Test
-    public void equalTest(){
+    public void equalTest() {
         Deque<Integer> a = new ArrayDeque<>();
         Deque<Integer> b = new LinkedListDeque<>();
+        assertEquals(true, a.equals(b));
         for (int i = 0; i < 500; i++) {
             a.addLast(i);
             b.addLast(i);
@@ -93,7 +95,7 @@ public class SpecialArrayDequeTest {
         for (int i = 0; i < a.size(); i++) {
             assertEquals(a.get(i), b.get(i));
         }
-        assertEquals(true, a.equals(b));
+        //assertFalse(a.equals(b));
 
 
         for (int i = 0; i < 1000; i++) {

@@ -57,7 +57,7 @@
       <recent name="deque" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SpecialArrayDequeTest.equalTest">
+  <component name="RunManager" selected="JUnit.SpecialArrayDequeTest">
     <configuration name="ArrayDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1" />
       <extension name="coverage">
@@ -83,6 +83,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="deque" />
       <option name="MAIN_CLASS_NAME" value="deque.LinkedListDequeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MaxArrayDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="deque.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="deque" />
+      <option name="MAIN_CLASS_NAME" value="deque.MaxArrayDequeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,22 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpecialArrayDequeTest.randomizedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="deque.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="deque" />
-      <option name="MAIN_CLASS_NAME" value="deque.SpecialArrayDequeTest" />
-      <option name="METHOD_NAME" value="randomizedTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="proj1" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -159,20 +158,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.MaxArrayDequeTest" />
       <item itemvalue="JUnit.SpecialArrayDequeTest.equalTest" />
       <item itemvalue="JUnit.ArrayDequeTest" />
       <item itemvalue="JUnit.LinkedListDequeTest" />
       <item itemvalue="JUnit.SpecialArrayDequeTest" />
-      <item itemvalue="JUnit.SpecialArrayDequeTest.randomizedTest" />
       <item itemvalue="Maven.proj1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpecialArrayDequeTest.equalTest" />
-        <item itemvalue="JUnit.ArrayDequeTest" />
-        <item itemvalue="JUnit.LinkedListDequeTest" />
         <item itemvalue="JUnit.SpecialArrayDequeTest" />
-        <item itemvalue="JUnit.SpecialArrayDequeTest.randomizedTest" />
+        <item itemvalue="JUnit.MaxArrayDequeTest" />
+        <item itemvalue="JUnit.LinkedListDequeTest" />
+        <item itemvalue="JUnit.ArrayDequeTest" />
+        <item itemvalue="JUnit.SpecialArrayDequeTest.equalTest" />
       </list>
     </recent_temporary>
   </component>

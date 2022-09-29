@@ -147,6 +147,8 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             return true;
         }
 
+
+
         if ((o instanceof Deque)) {
             Deque<T> dick = (Deque<T>) o;
             if (dick.size() != this.size()) {
@@ -157,6 +159,8 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
                     return false;
                 }
             }
+        } else {
+            return false;
         }
 
         return true;
