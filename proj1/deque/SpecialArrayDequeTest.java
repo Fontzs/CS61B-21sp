@@ -46,7 +46,7 @@ public class SpecialArrayDequeTest {
                 int size2 = R.size();
                 //System.out.println("size: " + size);
                 assertEquals(size, size2);
-                //assertEquals(true, L.equals(R));
+                assertEquals(true, L.equals(R));
 
             } else if (L.size() <= 0) {
                 continue;
@@ -72,5 +72,39 @@ public class SpecialArrayDequeTest {
                 //System.out.println("addLast(" + randVal + ")");
             }
         }
+    }
+
+    @Test
+    public void equalTest(){
+        Deque<Integer> a = new ArrayDeque<>();
+        Deque<Integer> b = new LinkedListDeque<>();
+        for (int i = 0; i < 500; i++) {
+            a.addLast(i);
+            b.addLast(i);
+        }
+        for (int i = 0; i < 400; i++) {
+            a.removeFirst();
+            b.removeFirst();
+        }
+        //a.printDeque();
+        //b.printDeque();
+
+        assertEquals(a.size(), b.size());
+        for (int i = 0; i < a.size(); i++) {
+            assertEquals(a.get(i), b.get(i));
+        }
+        assertEquals(true, a.equals(b));
+
+
+        for (int i = 0; i < 1000; i++) {
+            a.addFirst(i);
+            b.addFirst(i);
+        }
+        for (int i = 0; i < 298; i++) {
+            a.removeLast();
+            b.removeLast();
+        }
+
+        assertEquals(true, a.equals(b));
     }
 }

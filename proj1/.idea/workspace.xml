@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aade493f-1630-4933-819f-67ada0df3a84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deque/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/deque/ArrayDeque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deque/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/deque/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deque/SpecialArrayDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/deque/SpecialArrayDequeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
       <recent name="deque" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SpecialArrayDequeTest">
+  <component name="RunManager" selected="JUnit.SpecialArrayDequeTest.equalTest">
     <configuration name="ArrayDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj1" />
       <extension name="coverage">
@@ -72,22 +71,6 @@
       <option name="PACKAGE_NAME" value="deque" />
       <option name="MAIN_CLASS_NAME" value="deque.ArrayDequeTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayDequeTest.bigLLDequeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="deque.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="deque" />
-      <option name="MAIN_CLASS_NAME" value="deque.ArrayDequeTest" />
-      <option name="METHOD_NAME" value="bigLLDequeTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,6 +101,22 @@
       <option name="PACKAGE_NAME" value="deque" />
       <option name="MAIN_CLASS_NAME" value="deque.SpecialArrayDequeTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpecialArrayDequeTest.equalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="deque.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="deque" />
+      <option name="MAIN_CLASS_NAME" value="deque.SpecialArrayDequeTest" />
+      <option name="METHOD_NAME" value="equalTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,8 +161,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.SpecialArrayDequeTest.equalTest" />
       <item itemvalue="JUnit.ArrayDequeTest" />
-      <item itemvalue="JUnit.ArrayDequeTest.bigLLDequeTest" />
       <item itemvalue="JUnit.LinkedListDequeTest" />
       <item itemvalue="JUnit.SpecialArrayDequeTest" />
       <item itemvalue="JUnit.SpecialArrayDequeTest.randomizedTest" />
@@ -171,11 +170,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SpecialArrayDequeTest.equalTest" />
+        <item itemvalue="JUnit.ArrayDequeTest" />
+        <item itemvalue="JUnit.LinkedListDequeTest" />
         <item itemvalue="JUnit.SpecialArrayDequeTest" />
         <item itemvalue="JUnit.SpecialArrayDequeTest.randomizedTest" />
-        <item itemvalue="JUnit.LinkedListDequeTest" />
-        <item itemvalue="JUnit.ArrayDequeTest.bigLLDequeTest" />
-        <item itemvalue="JUnit.ArrayDequeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -200,5 +199,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/deque/SpecialArrayDequeTest.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
