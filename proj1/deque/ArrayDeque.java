@@ -6,8 +6,8 @@ import java.util.Iterator;
 public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     private T[] arr;
     private int size;
-    private int FirstPoint;
-    private int LastPoint;
+    private int firstPoint;
+    private int lastPoint;
     
 
     private void deduce() {
@@ -21,10 +21,10 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     private void resize(int capacity) {
         T[] temp = (T[]) new Object[capacity];
         int a = (capacity - size) / 2;
-        System.arraycopy(arr, FirstPoint + 1, temp, a, size);
+        System.arraycopy(arr, firstPoint + 1, temp, a, size);
         arr = temp;
-        FirstPoint = a - 1;
-        LastPoint = FirstPoint + size + 1;
+        firstPoint = a - 1;
+        lastPoint = firstPoint + size + 1;
 
     }
 
@@ -33,16 +33,16 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     public ArrayDeque() {
         arr = (T[]) new Object[8];
         size = 0;
-        FirstPoint = 4;
-        LastPoint = 5;
+        firstPoint = 4;
+        lastPoint = 5;
     }
 
     @Override
     public void addFirst(T item) {
-        arr[FirstPoint] = item;
-        FirstPoint--;
+        arr[firstPoint] = item;
+        firstPoint--;
         size++;
-        if (FirstPoint < 0) {
+        if (firstPoint < 0) {
             resize(size * 2);
         }
 
@@ -50,10 +50,10 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
 
     @Override
     public void addLast(T item) {
-        arr[LastPoint] = item;
-        LastPoint++;
+        arr[lastPoint] = item;
+        lastPoint++;
         size++;
-        if (LastPoint == arr.length) {
+        if (lastPoint == arr.length) {
             resize(size * 2);
         }
 
@@ -79,13 +79,13 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
 
     @Override
     public T removeFirst() {
-        if (isEmpty()){
+        if (isEmpty()) {
             return null;
         }
-        FirstPoint++;
+        firstPoint++;
         size--;
-        T ans = arr[FirstPoint];
-        arr[FirstPoint] = null;
+        T ans = arr[firstPoint];
+        arr[firstPoint] = null;
         deduce();
         return ans;
 
@@ -93,13 +93,13 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
 
     @Override
     public T removeLast() {
-        if (isEmpty()){
+        if (isEmpty()) {
             return null;
         }
-        LastPoint--;
+        lastPoint--;
         size--;
-        T ans = arr[LastPoint];
-        arr[LastPoint] = null;
+        T ans = arr[lastPoint];
+        arr[lastPoint] = null;
         deduce();
 
         return ans;
@@ -107,11 +107,11 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
 
     @Override
     public T get(int index) {
-        if (index >= size || index < 0){
+        if (index >= size || index < 0) {
             return null;
         }
 
-        return arr[FirstPoint + index + 1];
+        return arr[firstPoint + index + 1];
     }
 
 
@@ -147,12 +147,9 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             return true;
         }
 
-        if (! (o instanceof ArrayDeque)) {
+        if (!(o instanceof Deque)) {
             return false;
-        }
-
-
-        if (o instanceof ArrayDeque) {
+        } else {
             ArrayDeque<T> dick = (ArrayDeque<T>) o;
             if (dick.size() != this.size()) {
                 return false;
@@ -163,6 +160,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
                 }
             }
         }
-       return true;
+
+        return false;
     }
 }

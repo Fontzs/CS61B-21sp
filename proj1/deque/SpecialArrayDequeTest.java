@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SpecialArrayDequeTest {
     @Test
-    public void testThreeAddThreeRemove(){
+    public void testThreeAddThreeRemove() {
         LinkedListDeque<Integer> correct = new LinkedListDeque<>();
         ArrayDeque<Integer> broken = new ArrayDeque<>();
 
@@ -27,7 +27,7 @@ public class SpecialArrayDequeTest {
     }
 
     @Test
-    public void randomizedTest(){
+    public void randomizedTest() {
         LinkedListDeque<Integer> L = new LinkedListDeque<>();
         ArrayDeque<Integer> R = new ArrayDeque<>();
         int N = 5000;

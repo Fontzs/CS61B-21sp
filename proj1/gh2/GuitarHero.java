@@ -4,10 +4,11 @@ import edu.princeton.cs.algs4.StdDraw;
 
 public class GuitarHero {
     public static final double CONCERT_A = 440.0;
-    private static final String keyboard = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
+
 
     public static void main(String[] args) {
 
+        final String keyboard = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
         GuitarString[] gs = new GuitarString[keyboard.length()];
 
         for (int i = 0; i < keyboard.length(); i++) {
@@ -28,13 +29,13 @@ public class GuitarHero {
 
             double sample = 0.0;
 
-            for (GuitarString s : gs){
+            for (GuitarString s : gs) {
                 sample += s.sample();
             }
 
             StdAudio.play(sample);
 
-            for (GuitarString s : gs){
+            for (GuitarString s : gs) {
                 s.tic();
             }
 

@@ -28,7 +28,7 @@ public class GuitarString {
         buffer = new LinkedListDeque<>();
         int count = (int) Math.round(SR / frequency);
         for (int i = 0; i < count; i++) {
-            buffer.addLast( 0.);
+            buffer.addLast(0.);
         }
 
     }
