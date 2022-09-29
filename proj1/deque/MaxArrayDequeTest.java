@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class MaxArrayDequeTest {
 
-    public static class IntDeque implements Comparator<Integer>{
+    public static class IntComparator implements Comparator<Integer>{
 
         @Override
         public int compare(Integer o1, Integer o2) {
@@ -26,7 +26,7 @@ public class MaxArrayDequeTest {
     @Test
     public void test1(){
 
-        MaxArrayDeque<Integer> a = new MaxArrayDeque<>(new IntDeque());
+        MaxArrayDeque<Integer> a = new MaxArrayDeque<>(new IntComparator());
         int max = 0;
         a.addFirst(max);
         for (int i = 0; i < 1000000; i++) {

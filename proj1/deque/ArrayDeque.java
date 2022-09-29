@@ -3,24 +3,24 @@ package deque;
 import java.util.Iterator;
 
 
-public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
+public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     private T[] arr;
     private int size;
     private int FirstPoint;
     private int LastPoint;
     
 
-    private void deduce(){
-        if (isEmpty()){
+    private void deduce() {
+        if (isEmpty()) {
             resize(8);
-        } else if (size > 16 && size < arr.length / 4) {
+        } else if (size >= 4 && size < arr.length / 4) {
             resize(2 * size);
         }
     }
 
-    private void resize(int capacity){
+    private void resize(int capacity) {
         T[] temp = (T[]) new Object[capacity];
-        int a = (capacity - size)/ 2;
+        int a = (capacity - size) / 2;
         System.arraycopy(arr, FirstPoint + 1, temp, a, size);
         arr = temp;
         FirstPoint = a - 1;
@@ -30,7 +30,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
 
 
 
-    public ArrayDeque(){
+    public ArrayDeque() {
         arr = (T[]) new Object[8];
         size = 0;
         FirstPoint = 4;
@@ -42,7 +42,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
         arr[FirstPoint] = item;
         FirstPoint--;
         size++;
-        if (FirstPoint < 0){
+        if (FirstPoint < 0) {
             resize(size * 2);
         }
 
@@ -53,7 +53,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
         arr[LastPoint] = item;
         LastPoint++;
         size++;
-        if (LastPoint == arr.length){
+        if (LastPoint == arr.length) {
             resize(size * 2);
         }
 
@@ -115,7 +115,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
     }
 
 
-    private class ADIterator implements Iterator<T>{
+    private class ADIterator implements Iterator<T> {
         private int pos = 0;
 
         @Override
@@ -139,20 +139,26 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
 
 
     @Override
-    public boolean equals(Object o){
-        if (o == null){
+    public boolean equals(Object o) {
+        if (o == null) {
             return false;
         }
-        if (o == this){
+        if (o == this) {
             return true;
         }
-        if (o instanceof Deque){
+
+        if (! (o instanceof ArrayDeque)) {
+            return false;
+        }
+
+
+        if (o instanceof ArrayDeque) {
             ArrayDeque<T> dick = (ArrayDeque<T>) o;
-            if (dick.size() != this.size()){
+            if (dick.size() != this.size()) {
                 return false;
             }
             for (int i = 0; i < size(); i++) {
-                if (!this.get(i).equals(dick.get(i))){
+                if (!this.get(i).equals(dick.get(i))) {
                     return false;
                 }
             }
