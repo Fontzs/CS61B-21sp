@@ -106,5 +106,6 @@ public class SpecialArrayDequeTest {
         }
 
         assertEquals(true, a.equals(b));
+        assertEquals(a.size(), b.size());
     }
 }
