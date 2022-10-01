@@ -8,5 +8,5 @@ Motherfucker! I found the 22fa can't be tested on 21sp's  autograder, I have to 
 
 ~~You could contact me at 2simple233@gmail.com to check the answers and exchange learning experiences with me.~~
 
-Don't contact me, I put the 22fall version aside from my laptop. But I'll probably set it public after the end of this semester.
+Don't contact me, I stopped the 22fall version forever. ~~But I'll probably set it public after the end of this semester.~~
 
