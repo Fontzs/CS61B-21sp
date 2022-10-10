@@ -128,9 +128,10 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
 
         queue = new LinkedList<>();
         dfs(root);
-        Set<BSTNode> set = new HashSet<>();
+        HashSet<K> set = new HashSet<>();
         while (!queue.isEmpty()){
-            set.add(queue.poll());
+            BSTNode temp = queue.poll();
+            set.add(temp.key);
         }
         return set;
 
@@ -140,12 +141,68 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
 
     @Override
     public Object remove(Object key) {
-        return null;
+
+        // I wanna suck pussy.
+
+        BSTNode ans = find(root, (K) key);
+        if (ans != null){
+            this.size--;
+        }
+        root = delete(root, (K) key);
+        return ans.value;
+
     }
+
+
+    //get the min BSTNode
+
+    private BSTNode getMin(BSTNode cur) {
+        if (cur.left == null){
+            return cur;
+        } else {
+            return getMin(cur.left);
+        }
+
+    }
+
+    private BSTNode delete(BSTNode cur, K key) {
+        if (cur == null) {
+            return null;
+        }
+        int cmp = cur.key.compareTo(key);
+        if (cmp > 0) {
+            cur.left = delete(cur.left, key);
+        } else if (cmp < 0) {
+            cur.right = delete(cur.right, key);
+        } else {
+            if (cur.left == null) {
+                return cur.right;
+            }
+            if (cur.right == null) {
+                return cur.left;
+            }
+            BSTNode temp = cur;
+            cur = getMin(temp.right);
+            cur = new BSTNode(cur.key, cur.value);
+
+            cur.right = delete(temp.right, cur.key);
+            cur.left = temp.left;
+
+
+
+        }
+        return cur;
+    }
+
 
     @Override
     public Object remove(Object key, Object value) {
-        throw new UnsupportedOperationException("I don't wanna do it.");
+        // I wanna a pussy;
+        BSTNode getBitch = find(root, (K) key);
+        if (getBitch.value.equals((V) value)) {
+            return remove((K) key);
+        }
+        return null;
     }
 
 
