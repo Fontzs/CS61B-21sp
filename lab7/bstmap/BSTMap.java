@@ -6,11 +6,11 @@ import java.util.*;
 
 import static java.nio.file.Files.delete;
 
-public class BSTMap<K extends Comparable, V> implements Map61B {
+public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
-    BSTNode root;
-    int size;
-    Queue<BSTNode> queue;
+    private BSTNode root;
+    private int size;
+    private Queue<BSTNode> queue;
     private class BSTNode {
         private K key;
         private V value;
@@ -42,21 +42,8 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
         this.size = 0;
     }
 
-
-    private BSTNode find(BSTNode cur, K key) {
-        if (cur == null) {
-            return null;
-        } else if (cur.key.equals(key)) {
-            return cur;
-        }
-
-        BSTNode left_key = find(cur.left, key);
-        BSTNode right_key = find(cur.right, key);
-        return left_key == null ? right_key : left_key ;
-
-    }
     @Override
-    public boolean containsKey(Object key) {
+    public boolean containsKey(K key) {
         BSTNode cur = root;
         if (root == null || root.key == null) {
             return false;
@@ -74,13 +61,23 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
             }
         }
         return false;
-
     }
 
     @Override
-    public Object get(Object key) {
-
+    public V get(K key) {
         return find(root, (K) key) == null ? null : find(root, (K) key).value;
+    }
+
+    private BSTNode find(BSTNode cur, K key) {
+        if (cur == null) {
+            return null;
+        } else if (cur.key.equals(key)) {
+            return cur;
+        }
+
+        BSTNode left_key = find(cur.left, key);
+        BSTNode right_key = find(cur.right, key);
+        return left_key == null ? right_key : left_key ;
 
     }
 
@@ -90,12 +87,14 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
     }
 
     @Override
-    public void put(Object key, Object value) {
+    public void put(K key, V value) {
         if (key == null) {
             throw new IllegalArgumentException();
         }
         root = put(root, (K) key, (V) value);
     }
+
+
 
     private BSTNode put(BSTNode x, K k, V v) {
         if (x == null) {
@@ -124,7 +123,7 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
         dfs(cur.right);
     }
     @Override
-    public Set keySet() {
+    public Set<K> keySet() {
 
         queue = new LinkedList<>();
         dfs(root);
@@ -140,8 +139,7 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
     }
 
     @Override
-    public Object remove(Object key) {
-
+    public V remove(K key) {
         // I wanna suck pussy.
 
         BSTNode ans = find(root, (K) key);
@@ -150,12 +148,19 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
         }
         root = delete(root, (K) key);
         return ans.value;
+    }
 
+    @Override
+    public V remove(K key, V value) {
+        BSTNode getBitch = find(root, (K) key);
+        if (getBitch.value.equals((V) value)) {
+            return remove((K) key);
+        }
+        return null;
     }
 
 
     //get the min BSTNode
-
     private BSTNode getMin(BSTNode cur) {
         if (cur.left == null){
             return cur;
@@ -195,19 +200,9 @@ public class BSTMap<K extends Comparable, V> implements Map61B {
     }
 
 
-    @Override
-    public Object remove(Object key, Object value) {
-        // I wanna a pussy;
-        BSTNode getBitch = find(root, (K) key);
-        if (getBitch.value.equals((V) value)) {
-            return remove((K) key);
-        }
-        return null;
-    }
-
 
     @Override
-    public Iterator iterator() {
+    public Iterator<K> iterator() {
         throw new UnsupportedOperationException("I don't wanna do it.");
     }
 
