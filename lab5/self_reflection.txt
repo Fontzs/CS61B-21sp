@@ -4,27 +4,27 @@ ArrayDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A:  I didn't read any solution from the staff.
+A: 
 
 Q: What's something you felt proud of in your code, if anything?
 
-A: The size() method.
+A:
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A: The equal() method.
+A:
 
 Q: What did you learn by talking to your partner about writing ArrayDeque?
 
-A: I don't have a girlfriend, so nobody talks to me  : D
+A:
 
 Q: What do you wish you would have known before writing ArrayDeque, if anything?
 
-A: The usage of Iterator<T>. How to design the structure with an array.
+A:
 
 Q: If you wrote ArrayDeque again, what would you do differently, if anything?
 
-A: The equal() method.
+A:
 
 -----
 
@@ -32,27 +32,27 @@ LinkedListDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: Nope. 
+A: 
 
 Q: What's something you felt proud of in your code, if anything?
 
-A: No, this part is so easy.
+A:
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A: I think my code perfect.
+A:
 
 Q: What did you learn by talking to your partner about writing LinkedListDeque?
 
-A:  I don't have a girlfriend, so nobody talks to me  T_T
+A:
 
 Q: What do you wish you would have known before writing LinkedListDeque, if anything?
 
-A: No chanllenges.
+A:
 
 Q: If you wrote LinkedListDeque again, what would you do differently, if anything?
 
-A: Totally same.
+A:
 
 -----
 
@@ -60,4 +60,4 @@ Meta:
 
 Q: Did you like this design review process? Anything we should do differently next time?
 
-A:  No.
+A: 
